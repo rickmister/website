@@ -8,30 +8,50 @@
     <h1 align="center">Most important heading here</h1>
     <p align="center">Some additional information here</p>
   </header>
+ 
+  <input type="radio" name="tabs" id="tab1" checked />
+  <label for="tab1">Tab1</label><input type="radio" name="tabs" id="tab2" />
+  <label for="tab2">Tab2</label><input type="radio" name="tabs" id="tab3" />
+  <label for="tab3">Tab3</label><input type="radio" name="tabs" id="tab4" />
+  <label for="tab4">tab4</label><input type="radio" name="tabs" id="tab5" />
+  <label for="tab5">tab5</label>
   
-   <!-- Tab links -->
-<div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'London')">London</button>
-  <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
-</div>
-
-<!-- Tab content -->
-<div id="London" class="tabcontent">
-  <h3>London</h3>
-  <p>London is the capital city of England.</p>
-  </div>
-
-<div id="Paris" class="tabcontent">
-  <h3>Paris</h3>
-  <p>Paris is the capital of France.</p>
-  </div>
-
-<div id="Tokyo" class="tabcontent">
-  <h3>Tokyo</h3>
-  <p>Tokyo is the capital of Japan.</p>
-  </div> 
-
+  <div class="tab content1">Tab1 Contents</div>
+  <div class="tab content2">Tab2 Contents</div>
+  <div class="tab content3">Tab3 Contents</div>
+  <div class="tab content4">Tab4 Contents</div>
+  <div class="tab content5">Tab5 Contents</div>
+  
+  input { display: none; }                /* hide radio buttons */
+  input + label { display: inline-block } /* show labels in line */
+  input ~ .tab { display: none }          /* hide contents *//* show contents only for selected tab */
+  #tab1:checked ~ .tab.content1,
+  #tab2:checked ~ .tab.content2,
+  #tab3:checked ~ .tab.content3,
+  #tab4:checked ~ .tab.content4,
+  #tab5:checked ~ .tab.content5 { display: block; }
+  
+  input + label
+  {/* box with rounded corner */
+    border: 1px solid #999;
+    background: #EEE;
+    padding: 4px 12px;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    top: 1px;
+  }
+  
+  input:checked + label
+  {/* white background for selected tab */
+    background: #FFF;
+    border-bottom: 1px solid transparent;
+  }
+    input ~ .tab
+  {/* grey line between tab and contents */
+    border-top: 1px solid #999;
+    padding: 12px;
+  }
+  
   <body>
     <h1>Welcome to my Website!</h1>
     <h2>My name is Ricky Rann:)</h2>
